@@ -20,9 +20,6 @@ function App() {
                {Todo.map(item=>
                 <li>{item.Todos}
                 <button>Delete todo</button>
-                <button>Delete todo</button>
-                <button>Delete todo</button>
-                <button>Delete todo</button>
                 </li>
                 )}
                </ul> 
