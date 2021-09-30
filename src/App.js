@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {useState} from 'react';
 function App() {
 
@@ -12,14 +12,17 @@ function App() {
             setTodo([...Todo,item])
             console.log(Todo)
         }
+        const deletTodo=(id)=>{
+            setTodo(Todo.filter(item=>item.id!==id))
+        }
     return (
         <>
            <input type="text" placeholder="Type Here Todo" onChange={(e)=>setTodos(e.target.value)} />
            <button onClick={addTodo} >Add Todo</button>
            <ul>
                {Todo.map(item=>
-                <li>{item.Todos}
-                <button>Delete todo</button>
+                <li key={item.id}>{item.Todos}
+                <button id={item.id} onClick={(e)=>deletTodo(item.id)}>Delete todo</button>
                 </li>
                 )}
                </ul> 
